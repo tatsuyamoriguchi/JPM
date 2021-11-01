@@ -12,9 +12,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        GetApiCall().getData(url: "https://data.cityofnewyork.us/resource/s3k6-pzi2.json")
     }
 
+    
+    
 
 }
 
