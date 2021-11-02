@@ -117,7 +117,7 @@
                     <connections>
                         <outlet property="college_career_rateLabel" destination="OlH-yg-fhe" id="p9a-3m-QwJ"/>
                         <outlet property="locationLabel" destination="tTC-9i-tDB" id="Mka-IQ-Zjm"/>
-                        <outlet property="schoolMapView" destination="yh2-j0-ErU" id="ZtB-vt-XXc"/>
+                        <outlet property="mapView" destination="yh2-j0-ErU" id="AgU-hk-yx6"/>
                         <outlet property="school_nameLabel" destination="fJz-Pu-sah" id="u1n-gv-2cF"/>
                         <outlet property="tableView" destination="G2x-as-775" id="3ha-EV-mDh"/>
                         <outlet property="total_studentsLabel" destination="fWM-Iz-HMt" id="UnP-uu-SRf"/>

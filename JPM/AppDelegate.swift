@@ -7,17 +7,39 @@
 //
 
 import UIKit
+import CoreLocation
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    // to get the description use GLGeocoder, which converts coordinates into addresses or palce names
+    static let geoCoder = CLGeocoder()
 
-
+    let center = UNUserNotificationCenter.current()
+    // Instantiate Location Manager to manage a user's location data
+    let locationManager = CLLocationManager()
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Acknoledge a user to allow the app to access location data
+        locationManager.requestWhenInUseAuthorization()
+        // locationManager listening user's location
+        locationManager.startMonitoringVisits()
+        
+        locationManager.delegate = self
+        
+        center.requestAuthorization(options: [.alert, .sound]){
+            granted, error in
+    
+        }
         return true
     }
 
+    
+    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
@@ -35,3 +57,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate: CLLocationManagerDelegate {
+    
+    // Callback from CLLocationManager when the new visit is recorderd and provides you with a CLVisit
+    // CLVisit properties:
+    // arrivalDate, departureDate, coordinate, horizontalAccuracy
+//    func locationManager(_ manager: CLLocationManager, didVisit visit: CLVisit) {
+//        // create CLLocation from the coordinates of CLVisit
+//        let clLocation = CLLocation(latitude: visit.coordinate.latitude, longitude: visit.coordinate.longitude)
+//
+//        // Get location description here.
+//        let userLocation = clLocation.coordinate
+//        print("userLocation: \(userLocation)")
+
+        
+          
+        
+        
+        // Use distance to measure between user's and a school location in ViewController
+//    clLocation.distance(from: <#T##CLLocation#>)
+        
+        // Ask GeoCode to get placemarks from the location, take the first placemark
+//        AppDelegate.geoCoder.reverseGeocodeLocation(clLocation) {
+//            placemarks, _ in
+//            if let place = placemarks?.first {
+//                let description = "\(place)"
+//                self.newVisitReceived(visit, description: description)
+//            }
+//
+//        }
+    
+    
+    
+//    func newVisitReceived(_ visit: CLVisit, description: String ) {
+//        init(_ location: CLLocationCoordinate2D, date: Date, descriptionString: String)
+//
+//        let location = Location(visit: visit, descriptionString: description)
+//
+//        // Create notification content.
+//        let content = UNMutableNotificationContent()
+//
+//        content.title = "New location reached"
+//        content.body = "location.description"
+//        content.sound = .default
+//
+//        center.add(request, withCompletionHandler: nil)
+//
+//        // Save location to disk here
+//
+//    }
+}

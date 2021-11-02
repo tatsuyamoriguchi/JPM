@@ -10,8 +10,21 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
+
+    // Instantiate Location Manager to manage a user's location data
+    // If console returns an error: "libMobileGestalt MobileGestalt.c:1647: Could not retrieve region info".
+    // add a location to your Simulator. Simulator menu: Features/Location/Custom Location
+    let locationManager = CLLocationManager()
+    let latitude: Double = 0.0
+    let longitude: Double = 0.0
+    let descript: String = ""
+
+    
+
+
+
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var school_nameLabel: UILabel!
@@ -19,7 +32,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var total_studentsLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     
-    @IBOutlet weak var schoolMapView: MKMapView!
+    @IBOutlet weak var mapView: MKMapView!
     
     
     
@@ -30,13 +43,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var sections = [String]()
     var dataSource = [String:[SchoolResults]]()
     
+ 
     
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
- // Instantiate Location Manager to manage a user's location data
-  let locationManager = CLLocationManager()
+
         
       // Ask for Authorisation from the User.
         self.locationManager.requestAlwaysAuthorization()
@@ -50,7 +64,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
         }
         
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        mapView.delegate = self
+        mapView.mapType = .standard
+        mapView.isZoomEnabled = true
+        mapView.isScrollEnabled = true
+        
+        if let coor = mapView.userLocation.location?.coordinate { mapView.setCenter(coor, animated: true) }
+        
+       
+        //GetMap().openMapForPlace(lat: 37.785834, long: -122.406417, placeName: "Home")
+        
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -60,107 +83,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
 }
 
-// MARK: - TableView
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
-    
-           
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let headerLabel = UILabel()
-        headerLabel.backgroundColor = .systemTeal
-        
-        print("sections[section]: \(sections[section])")
-        return sections[section]
-    }
-    
-
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionNeighborhood = sections[section]
-        return dataSource[sectionNeighborhood]?.count ?? 0
-    }
-
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40.0
-    }
-
-
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerLabel = UILabel()
-        headerLabel.backgroundColor = .systemIndigo
-        headerLabel.textColor = .white
-        headerLabel.text = sections[section]
-        return headerLabel
-    }
-
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let sectionNeighborhood = sections[indexPath.section]
-        let item = dataSource[sectionNeighborhood]![indexPath.row]
-        
-        cell.textLabel?.text = item.school_name
-        if let nameString = item.neighborhood {
-            cell.detailTextLabel?.text = nameString
-        }
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let sectionNeighborhood = sections[indexPath.section]
-        let item = dataSource[sectionNeighborhood]![indexPath.row]
-        
-        school_nameLabel.text = item.school_name
-        
-        
-        locationLabel.text = removeAfter(char: "(", word: item.location)
-        
-        // Convert college_career_rate String to Int in percentage for display
-        if let doubleRate = item.college_career_rate?.toDouble() {
-            let rate = Int(doubleRate * 100)
-            college_career_rateLabel.text = "College Career Rate: \(rate)%"
-        }
-        
-        if let total = item.total_students {
-            total_studentsLabel.text = "Total Students: \(total)"
-        }
-        
-        
-        
-    }
-}
-
-extension String {
-    func toDouble() -> Double {
-        let nsString = self as NSString
-        return nsString.doubleValue
-    }
-}
-
 
 extension ViewController {
-    // Remove characteres after 'char' from 'word'
-    // Use it to omit location data from location address
-    // i.e. 2474 Crotona Avenue, Bronx NY 10458 (40.855392, -73.882487)
-    // -> 2474 Crotona Avenue, Bronx NY 10458
-    func removeAfter(char: String, word: String) -> String {
-        var string: String = ""
-        if let index = word.range(of: char)?.lowerBound {
-            let substring = word[..<index]
-            string = String(substring)
-        }
-        return string
-    }
-}
-
-extension ViewController {
+    
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])  {
+        
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+//        let location = locations.last {_ in
+//        let center = CLLocationCoordinate2D(latitude: locValue.latitude, longitude: locValue.longitude)
+//        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+//            self.mapView.setRegion(region, animated: true)
+//      }
         
-        
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
     }
 }

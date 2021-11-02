@@ -21,6 +21,10 @@
 		8C74FA27272F56CC008992C9 /* GetApiCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74FA25272F56CC008992C9 /* GetApiCall.swift */; };
 		8C74FA2C272F8F60008992C9 /* GetMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74FA2B272F8F60008992C9 /* GetMap.swift */; };
 		8C74FA2D272F8F60008992C9 /* GetMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74FA2B272F8F60008992C9 /* GetMap.swift */; };
+		8C88F58F2731DFAE00DBBBD9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C88F58E2731DFAE00DBBBD9 /* Helper.swift */; };
+		8C88F5902731DFAE00DBBBD9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C88F58E2731DFAE00DBBBD9 /* Helper.swift */; };
+		8C88F5922731E1F000DBBBD9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C88F5912731E1F000DBBBD9 /* TableViewController.swift */; };
+		8C88F5932731E1F000DBBBD9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C88F5912731E1F000DBBBD9 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,8 @@
 		8C6961E4272F415900F4ADF3 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		8C74FA25272F56CC008992C9 /* GetApiCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetApiCall.swift; sourceTree = "<group>"; };
 		8C74FA2B272F8F60008992C9 /* GetMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMap.swift; sourceTree = "<group>"; };
+		8C88F58E2731DFAE00DBBBD9 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		8C88F5912731E1F000DBBBD9 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,7 @@
 			children = (
 				8C74FA25272F56CC008992C9 /* GetApiCall.swift */,
 				8C74FA2B272F8F60008992C9 /* GetMap.swift */,
+				8C88F58E2731DFAE00DBBBD9 /* Helper.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -142,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				8C6961C0272F353400F4ADF3 /* ViewController.swift */,
+				8C88F5912731E1F000DBBBD9 /* TableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -251,9 +259,11 @@
 				8C6961C1272F353400F4ADF3 /* ViewController.swift in Sources */,
 				8C74FA26272F56CC008992C9 /* GetApiCall.swift in Sources */,
 				8C6961E5272F415900F4ADF3 /* DataModel.swift in Sources */,
+				8C88F5922731E1F000DBBBD9 /* TableViewController.swift in Sources */,
 				8C6961BD272F353400F4ADF3 /* AppDelegate.swift in Sources */,
 				8C6961BF272F353400F4ADF3 /* SceneDelegate.swift in Sources */,
 				8C74FA2C272F8F60008992C9 /* GetMap.swift in Sources */,
+				8C88F58F2731DFAE00DBBBD9 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +272,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C6961D4272F353C00F4ADF3 /* JPMTests.swift in Sources */,
+				8C88F5932731E1F000DBBBD9 /* TableViewController.swift in Sources */,
 				8C74FA2D272F8F60008992C9 /* GetMap.swift in Sources */,
 				8C74FA27272F56CC008992C9 /* GetApiCall.swift in Sources */,
 				8C6961E6272F415900F4ADF3 /* DataModel.swift in Sources */,
+				8C88F5902731DFAE00DBBBD9 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
