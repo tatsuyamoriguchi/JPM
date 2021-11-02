@@ -12,6 +12,10 @@ import Foundation
 //    let array: [SchoolResults]
 //}
 
+class EndPoint {
+    let endPoint  = "https://data.cityofnewyork.us/resource/s3k6-pzi2.json"
+}
+
 struct SchoolResults: Codable {
     let dbn: String
     let school_name: String
@@ -22,7 +26,7 @@ struct SchoolResults: Codable {
     let academicopportunities4: String?
     let academicopportunities5: String?
     let neighborhood: String?
-    let location: String?
+    let location: String
     let phone_number: String?
     let school_email: String?
     let website: String?
@@ -35,9 +39,14 @@ struct SchoolResults: Codable {
     let attendance_rate: String?
     let college_career_rate: String?
     
-    
+    let latitude: String?
+    let longitude: String?
 }
 
+struct neighborhoodDict {
+    var count: Int
+    var dict: [[String: SchoolResults]]
+}
 
 
 
