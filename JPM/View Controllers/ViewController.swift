@@ -43,11 +43,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     var sections = [String]()
     var dataSource = [String:[SchoolResults]]()
     
- 
-    
-
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -71,9 +66,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
         if let coor = mapView.userLocation.location?.coordinate { mapView.setCenter(coor, animated: true) }
         
-       
-        //GetMap().openMapForPlace(lat: 37.785834, long: -122.406417, placeName: "Home")
-        
+     
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -90,12 +83,18 @@ extension ViewController {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])  {
         
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-//        let location = locations.last {_ in
-//        let center = CLLocationCoordinate2D(latitude: locValue.latitude, longitude: locValue.longitude)
-//        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-//            self.mapView.setRegion(region, animated: true)
-//      }
+        mapView.mapType = MKMapType.standard
+        let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
+        let region = MKCoordinateRegion(center: locValue, span: span)
+        mapView.setRegion(region, animated: true)
         
+        // Add annotation to your current location
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = locValue
+        annotation.title = "You are here"
+        annotation.subtitle = "Current Location"
+        mapView.addAnnotation(annotation)
+
         print("locations = \(locValue.latitude) \(locValue.longitude)")
     }
 }
