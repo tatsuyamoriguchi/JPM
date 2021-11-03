@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // to get the description use GLGeocoder, which converts coordinates into addresses or palce names
     static let geoCoder = CLGeocoder()
 
-    let center = UNUserNotificationCenter.current()
+    //let center = UNUserNotificationCenter.current()
     // Instantiate Location Manager to manage a user's location data
     let locationManager = CLLocationManager()
     
@@ -26,15 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Acknoledge a user to allow the app to access location data
         locationManager.requestWhenInUseAuthorization()
-        // locationManager listening user's location
-        locationManager.startMonitoringVisits()
         
         locationManager.delegate = self
         
-        center.requestAuthorization(options: [.alert, .sound]){
-            granted, error in
-    
-        }
         return true
     }
 

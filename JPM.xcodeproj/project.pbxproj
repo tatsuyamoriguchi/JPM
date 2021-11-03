@@ -21,6 +21,8 @@
 		8C74FA27272F56CC008992C9 /* GetApiCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74FA25272F56CC008992C9 /* GetApiCall.swift */; };
 		8C74FA2C272F8F60008992C9 /* GetMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74FA2B272F8F60008992C9 /* GetMap.swift */; };
 		8C74FA2D272F8F60008992C9 /* GetMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74FA2B272F8F60008992C9 /* GetMap.swift */; };
+		8C7E87B72732818000C92D17 /* OpenURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E87B62732818000C92D17 /* OpenURL.swift */; };
+		8C7E87B82732818000C92D17 /* OpenURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E87B62732818000C92D17 /* OpenURL.swift */; };
 		8C88F58F2731DFAE00DBBBD9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C88F58E2731DFAE00DBBBD9 /* Helper.swift */; };
 		8C88F5902731DFAE00DBBBD9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C88F58E2731DFAE00DBBBD9 /* Helper.swift */; };
 		8C88F5922731E1F000DBBBD9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C88F5912731E1F000DBBBD9 /* TableViewController.swift */; };
@@ -55,6 +57,7 @@
 		8C6961E4272F415900F4ADF3 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		8C74FA25272F56CC008992C9 /* GetApiCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetApiCall.swift; sourceTree = "<group>"; };
 		8C74FA2B272F8F60008992C9 /* GetMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMap.swift; sourceTree = "<group>"; };
+		8C7E87B62732818000C92D17 /* OpenURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenURL.swift; sourceTree = "<group>"; };
 		8C88F58E2731DFAE00DBBBD9 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		8C88F5912731E1F000DBBBD9 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		8C88F594273210D800DBBBD9 /* SchoolDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolDetailsViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +147,7 @@
 				8C74FA25272F56CC008992C9 /* GetApiCall.swift */,
 				8C74FA2B272F8F60008992C9 /* GetMap.swift */,
 				8C88F58E2731DFAE00DBBBD9 /* Helper.swift */,
+				8C7E87B62732818000C92D17 /* OpenURL.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -267,6 +271,7 @@
 				8C88F5922731E1F000DBBBD9 /* TableViewController.swift in Sources */,
 				8C6961BD272F353400F4ADF3 /* AppDelegate.swift in Sources */,
 				8C6961BF272F353400F4ADF3 /* SceneDelegate.swift in Sources */,
+				8C7E87B72732818000C92D17 /* OpenURL.swift in Sources */,
 				8C74FA2C272F8F60008992C9 /* GetMap.swift in Sources */,
 				8C88F58F2731DFAE00DBBBD9 /* Helper.swift in Sources */,
 			);
@@ -281,6 +286,7 @@
 				8C88F5932731E1F000DBBBD9 /* TableViewController.swift in Sources */,
 				8C74FA2D272F8F60008992C9 /* GetMap.swift in Sources */,
 				8C74FA27272F56CC008992C9 /* GetApiCall.swift in Sources */,
+				8C7E87B82732818000C92D17 /* OpenURL.swift in Sources */,
 				8C6961E6272F415900F4ADF3 /* DataModel.swift in Sources */,
 				8C88F5902731DFAE00DBBBD9 /* Helper.swift in Sources */,
 			);

@@ -21,20 +21,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     let longitude: Double = 0.0
     let descript: String = ""
 
-    
 
-
-
-
+    // MARK: - Properties
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var college_career_rateLabel: UILabel!
     @IBOutlet weak var total_studentsLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var school_nameButton: UIButton!
-    
     @IBOutlet weak var mapView: MKMapView!
     
-    
+    // When school name label is tapped, segue to SchoolDetailsVC
     var schoolName: String = ""
     @IBAction func schoolTapped(_ sender: UIButton) {
         
@@ -43,19 +39,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: "Segue2Details", sender: self)
-
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! SchoolDetailsViewController
-        vc.schoolObj = tappedSchool
-    }
     
-    
-//    var schoolList = [SchoolResults]()
-//    var neighbCount: Int = 0
-//
     
     var sections = [String]()
     var dataSource = [String:[SchoolResults]]()
@@ -63,6 +50,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     // See tableView(didSelectRowAt
     var tappedSchool: SchoolResults? = nil
     
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -91,17 +79,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+        // Access API to get school data
         self.getData(url: EndPoint().endPoint)
         
-    
     }
 
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! SchoolDetailsViewController
+        vc.schoolObj = tappedSchool
+    }
+    
 }
 
 
 extension ViewController {
-    
-    
+   
+    // Core Location, MapKit
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])  {
         
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }

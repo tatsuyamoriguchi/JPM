@@ -21,8 +21,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource  {
         print("sections[section]: \(sections[section])")
         return sections[section]
     }
-    
-
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
@@ -60,16 +58,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource  {
         return cell
     }
     
+    // Show school location on map and selected school data when tableview cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sectionNeighborhood = sections[indexPath.section]
         let item = dataSource[sectionNeighborhood]![indexPath.row]
         
+        // Display school name on UIButton
         school_nameButton.setTitle(item.school_name, for: .normal)
+        // Remove location data at the end of address
         locationLabel.text = Helper().removeAfter(char: "(", word: item.location)
         
         // Convert college_career_rate String to Int in percentage for display
         if let doubleRate = item.college_career_rate?.toDouble() {
-       // if let doubleRate = Helper().toDouble(string: (item.college_career_rate ?? "N/A")) {
             let rate = Int(doubleRate * 100)
             college_career_rateLabel.text = "College Career Rate: \(rate)%"
         }
@@ -84,7 +84,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource  {
         let locValue = CLLocationCoordinate2D(latitude: lati, longitude: longi)
         mapView.setCenter(locValue, animated: true)
         
-        // Add annotation to school location
+        // Add annotation to school location, tap the red pin on map to see the annotation
         let annotation = MKPointAnnotation()
         annotation.coordinate = locValue
         annotation.title = item.school_name
@@ -93,11 +93,5 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource  {
         
         // To hold school detail data for detail view when school name UILabel is tapped
         tappedSchool = item
-        
-        
     }
-    
-    
-    
-
 }
