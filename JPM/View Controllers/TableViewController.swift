@@ -64,7 +64,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource  {
         let sectionNeighborhood = sections[indexPath.section]
         let item = dataSource[sectionNeighborhood]![indexPath.row]
         
-        school_nameLabel.text = item.school_name
+        school_nameButton.setTitle(item.school_name, for: .normal)
         locationLabel.text = Helper().removeAfter(char: "(", word: item.location)
         
         // Convert college_career_rate String to Int in percentage for display
@@ -84,11 +84,20 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource  {
         let locValue = CLLocationCoordinate2D(latitude: lati, longitude: longi)
         mapView.setCenter(locValue, animated: true)
         
-        // Add annotation to your current location
+        // Add annotation to school location
         let annotation = MKPointAnnotation()
         annotation.coordinate = locValue
         annotation.title = item.school_name
         annotation.subtitle = "Subway: \(item.subway ?? "N/A"), \nBus: \(item.bus ?? "N/A")"
         mapView.addAnnotation(annotation)
+        
+        // To hold school detail data for detail view when school name UILabel is tapped
+        tappedSchool = item
+        
+        
     }
+    
+    
+    
+
 }

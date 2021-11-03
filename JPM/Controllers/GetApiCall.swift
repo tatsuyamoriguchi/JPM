@@ -34,25 +34,6 @@ extension ViewController {
                     self.tableView.reloadData()
                 }
                 
-//                for i in response {
-//                    schools.append(SchoolResults(dbn: i.dbn, school_name: i.school_name, overview_paragraph: i.overview_paragraph, academicopportunities1: i.academicopportunities1, academicopportunities2: i.academicopportunities2, academicopportunities3: i.academicopportunities3, academicopportunities4: i.academicopportunities4, academicopportunities5: i.academicopportunities5, neighborhood: i.neighborhood, location: i.location, phone_number: i.phone_number, school_email: i.school_email, website: i.website, subway: i.subway, bus: i.bus, total_students: i.total_students, start_time: i.start_time, end_time: i.end_time, graduation_rate: i.graduation_rate, attendance_rate: i.attendance_rate, college_career_rate: i.college_career_rate, latitude: i.latitude, longitude: i.longitude ))
-//                }
-
-        
-                
-//                schools = schools.sorted { $0.neighborhood! < $1.neighborhood! }
-                
-//                DispatchQueue.main.async {
-//                    //self.neighborData = self.neighborDict(data: schools)
-//                    //print("self.neighborData: \(self.neighborData)")
-//                    self.neighbCount = self.countNeighborhood(data: schools)
-//                    self.schoolList = schools
-//                    self.tableView.reloadData()
-//
-//                }
-                
-                
-                
             } catch {
                 print("hello error: \(error)")
             }

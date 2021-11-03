@@ -25,6 +25,8 @@
 		8C88F5902731DFAE00DBBBD9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C88F58E2731DFAE00DBBBD9 /* Helper.swift */; };
 		8C88F5922731E1F000DBBBD9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C88F5912731E1F000DBBBD9 /* TableViewController.swift */; };
 		8C88F5932731E1F000DBBBD9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C88F5912731E1F000DBBBD9 /* TableViewController.swift */; };
+		8C88F595273210D800DBBBD9 /* SchoolDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C88F594273210D800DBBBD9 /* SchoolDetailsViewController.swift */; };
+		8C88F596273210D800DBBBD9 /* SchoolDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C88F594273210D800DBBBD9 /* SchoolDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,7 @@
 		8C74FA2B272F8F60008992C9 /* GetMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMap.swift; sourceTree = "<group>"; };
 		8C88F58E2731DFAE00DBBBD9 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		8C88F5912731E1F000DBBBD9 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		8C88F594273210D800DBBBD9 /* SchoolDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +106,6 @@
 				8C6961E0272F389600F4ADF3 /* Views */,
 				8C6961BC272F353400F4ADF3 /* AppDelegate.swift */,
 				8C6961BE272F353400F4ADF3 /* SceneDelegate.swift */,
-				8C6961C2272F353400F4ADF3 /* Main.storyboard */,
 				8C6961C5272F353B00F4ADF3 /* Assets.xcassets */,
 				8C6961C7272F353C00F4ADF3 /* LaunchScreen.storyboard */,
 				8C6961CA272F353C00F4ADF3 /* Info.plist */,
@@ -123,6 +125,7 @@
 		8C6961E0272F389600F4ADF3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8C6961C2272F353400F4ADF3 /* Main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			children = (
 				8C6961C0272F353400F4ADF3 /* ViewController.swift */,
 				8C88F5912731E1F000DBBBD9 /* TableViewController.swift */,
+				8C88F594273210D800DBBBD9 /* SchoolDetailsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -257,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C6961C1272F353400F4ADF3 /* ViewController.swift in Sources */,
+				8C88F595273210D800DBBBD9 /* SchoolDetailsViewController.swift in Sources */,
 				8C74FA26272F56CC008992C9 /* GetApiCall.swift in Sources */,
 				8C6961E5272F415900F4ADF3 /* DataModel.swift in Sources */,
 				8C88F5922731E1F000DBBBD9 /* TableViewController.swift in Sources */,
@@ -271,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C88F596273210D800DBBBD9 /* SchoolDetailsViewController.swift in Sources */,
 				8C6961D4272F353C00F4ADF3 /* JPMTests.swift in Sources */,
 				8C88F5932731E1F000DBBBD9 /* TableViewController.swift in Sources */,
 				8C74FA2D272F8F60008992C9 /* GetMap.swift in Sources */,

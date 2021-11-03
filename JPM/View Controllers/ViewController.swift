@@ -27,13 +27,32 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var school_nameLabel: UILabel!
     @IBOutlet weak var college_career_rateLabel: UILabel!
     @IBOutlet weak var total_studentsLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var school_nameButton: UIButton!
     
     @IBOutlet weak var mapView: MKMapView!
     
+    
+    var schoolName: String = ""
+    @IBAction func schoolTapped(_ sender: UIButton) {
+        print("hello: \(tappedSchool?.school_name)")
+        
+        schoolName = tappedSchool!.school_name
+        print("schoolName 1: \(schoolName)")
+        
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "Segue2Details", sender: self)
+
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! SchoolDetailsViewController
+        vc.testName = schoolName
+        print("schoolName 2: \(schoolName)")
+    }
     
     
 //    var schoolList = [SchoolResults]()
@@ -42,12 +61,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
     var sections = [String]()
     var dataSource = [String:[SchoolResults]]()
+    // To temporally hold school detail information when TableViewCell is tapped and pass it to details view
+    // See tableView(didSelectRowAt
+    var tappedSchool: SchoolResults? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-      // Ask for Authorisation from the User.
+        // Ask for Authorisation from the User.
         self.locationManager.requestAlwaysAuthorization()
 
         // For use in foreground
@@ -59,11 +80,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             locationManager.startUpdatingLocation()
         }
         
+        // map configuration
         mapView.delegate = self
         mapView.mapType = .standard
         mapView.isZoomEnabled = true
         mapView.isScrollEnabled = true
-        
+        // get user's current location to show it on map as default
         if let coor = mapView.userLocation.location?.coordinate { mapView.setCenter(coor, animated: true) }
         
      
@@ -72,6 +94,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         self.tableView.dataSource = self
         
         self.getData(url: EndPoint().endPoint)
+        
+    
     }
 
 }
@@ -98,3 +122,4 @@ extension ViewController {
         print("locations = \(locValue.latitude) \(locValue.longitude)")
     }
 }
+
