@@ -14,7 +14,6 @@
 		8C6961C6272F353B00F4ADF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C6961C5272F353B00F4ADF3 /* Assets.xcassets */; };
 		8C6961C9272F353C00F4ADF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C6961C7272F353C00F4ADF3 /* LaunchScreen.storyboard */; };
 		8C6961D4272F353C00F4ADF3 /* JPMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6961D3272F353C00F4ADF3 /* JPMTests.swift */; };
-		8C6961DF272F358400F4ADF3 /* JPMorgan's Code Challenge for Mobile Engineering roles.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8C6961DE272F358400F4ADF3 /* JPMorgan's Code Challenge for Mobile Engineering roles.pdf */; };
 		8C6961E5272F415900F4ADF3 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6961E4272F415900F4ADF3 /* DataModel.swift */; };
 		8C6961E6272F415900F4ADF3 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6961E4272F415900F4ADF3 /* DataModel.swift */; };
 		8C74FA26272F56CC008992C9 /* GetApiCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74FA25272F56CC008992C9 /* GetApiCall.swift */; };
@@ -53,7 +52,6 @@
 		8C6961CF272F353C00F4ADF3 /* JPMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JPMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C6961D3272F353C00F4ADF3 /* JPMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPMTests.swift; sourceTree = "<group>"; };
 		8C6961D5272F353C00F4ADF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C6961DE272F358400F4ADF3 /* JPMorgan's Code Challenge for Mobile Engineering roles.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "JPMorgan's Code Challenge for Mobile Engineering roles.pdf"; sourceTree = "<group>"; };
 		8C6961E4272F415900F4ADF3 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		8C74FA25272F56CC008992C9 /* GetApiCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetApiCall.swift; sourceTree = "<group>"; };
 		8C74FA2B272F8F60008992C9 /* GetMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMap.swift; sourceTree = "<group>"; };
@@ -84,7 +82,6 @@
 		8C6961B0272F353400F4ADF3 = {
 			isa = PBXGroup;
 			children = (
-				8C6961DE272F358400F4ADF3 /* JPMorgan's Code Challenge for Mobile Engineering roles.pdf */,
 				8C6961BB272F353400F4ADF3 /* JPM */,
 				8C6961D2272F353C00F4ADF3 /* JPMTests */,
 				8C6961BA272F353400F4ADF3 /* Products */,
@@ -246,7 +243,6 @@
 				8C6961C9272F353C00F4ADF3 /* LaunchScreen.storyboard in Resources */,
 				8C6961C6272F353B00F4ADF3 /* Assets.xcassets in Resources */,
 				8C6961C4272F353400F4ADF3 /* Main.storyboard in Resources */,
-				8C6961DF272F358400F4ADF3 /* JPMorgan's Code Challenge for Mobile Engineering roles.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
