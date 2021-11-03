@@ -39,7 +39,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     @IBAction func schoolTapped(_ sender: UIButton) {
         print("hello: \(tappedSchool?.school_name)")
         
-        schoolName = tappedSchool!.school_name
+        schoolName = tappedSchool?.school_name ?? "No school name available"
         print("schoolName 1: \(schoolName)")
         
         DispatchQueue.main.async {
