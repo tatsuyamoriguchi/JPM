@@ -11,7 +11,7 @@ import MapKit
 
 class GetMap {
     
-    // Locate on a map with street address
+    // Locate on a map with street address, this is not used in this app
     func getMap(forAddress address: String, completion: @escaping (CLLocationCoordinate2D?) -> Void) {
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(address) {

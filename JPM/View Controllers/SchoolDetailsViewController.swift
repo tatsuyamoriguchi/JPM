@@ -7,8 +7,6 @@
 //
 
 import UIKit
-//import MessageUI
-
 
 class SchoolDetailsViewController: UIViewController, UIGestureRecognizerDelegate {
 
@@ -60,9 +58,9 @@ class SchoolDetailsViewController: UIViewController, UIGestureRecognizerDelegate
         // When phone number is tapped, make a phone call to the number (unable to test on Simulator.)
         if schoolObj?.phone_number != nil {
             phoneNumber.isUserInteractionEnabled = true
-            let tap = UITapGestureRecognizer(target: self, action: #selector(self.phoneNumberLabelTap))
-            tap.delegate = self
-            phoneNumber.addGestureRecognizer(tap)
+            let tapPhone = UITapGestureRecognizer(target: self, action: #selector(self.phoneNumberLabelTap))
+            tapPhone.delegate = self
+            phoneNumber.addGestureRecognizer(tapPhone)
         }
         // Send email when email address is tapped (Unale to test on Simulator since no email set up)
         if schoolObj?.school_email != nil {
@@ -80,69 +78,3 @@ class SchoolDetailsViewController: UIViewController, UIGestureRecognizerDelegate
         }
     }
 }
-
-
-//extension SchoolDetailsViewController: MFMailComposeViewControllerDelegate {
-//    @objc func phoneNumberLabelTap() {
-//        //        print("phoneNumber: \(schoolObj?.phone_number)")
-//        let phoneUrl = URL(string: "telprompt:\(schoolObj?.phone_number ?? "")")!
-//        
-//        if(UIApplication.shared.canOpenURL(phoneUrl)) {
-//            
-//            UIApplication.shared.open(phoneUrl)
-//        }
-//        else {
-//            let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-//                switch action.style{
-//                    
-//                case .cancel:
-//                    print("cancel")
-//                    
-//                case .destructive:
-//                    print("destructive")
-//                    
-//                default:
-//                    print("default")
-//                    
-//                }
-//            }))
-//            
-//        }
-//    }
-//    
-//    @objc func sendEmailLabelTap() {
-//        if MFMailComposeViewController.canSendMail() {
-//            let mail = MFMailComposeViewController()
-//            mail.mailComposeDelegate = self
-//            mail.setToRecipients(["you@yoursite.com"])
-//            mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
-//            
-//            present(mail, animated: true)
-//        } else {
-//            // show failure alert
-//        }
-//    }
-//    
-//    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-//        controller.dismiss(animated: true)
-//    }
-//    
-//    
-//    @objc func webSiteLabelTap() {
-//        
-//        
-//        if let firstURLString = schoolObj?.website {
-//            let urlString = "https://" + firstURLString
-//            if let url = URL(string: urlString) {
-//                
-//                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-//                
-//            }
-//            
-//            
-//        }
-//    }
-//}
-
-

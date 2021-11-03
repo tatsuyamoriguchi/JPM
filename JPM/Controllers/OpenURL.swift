@@ -42,8 +42,10 @@ extension SchoolDetailsViewController: MFMailComposeViewControllerDelegate {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
-            mail.setToRecipients(["you@yoursite.com"])
-            mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
+            if let receipient = schoolObj?.school_email {
+                mail.setToRecipients([receipient])
+            }
+            //mail.setMessageBody("", isHTML: true)
             
             present(mail, animated: true)
         } else {

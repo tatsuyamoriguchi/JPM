@@ -18,7 +18,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource  {
         let headerLabel = UILabel()
         headerLabel.backgroundColor = .systemTeal
         
-        print("sections[section]: \(sections[section])")
         return sections[section]
     }
 

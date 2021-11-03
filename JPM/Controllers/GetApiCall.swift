@@ -14,8 +14,6 @@ extension ViewController {
     
     func getData(url: String) {
         
-//        var schools = [SchoolResults]()
-        
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -35,7 +33,7 @@ extension ViewController {
                 }
                 
             } catch {
-                print("hello error: \(error)")
+                print("error: \(error)")
             }
         })
         task.resume()
