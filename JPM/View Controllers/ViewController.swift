@@ -37,7 +37,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
     var schoolName: String = ""
     @IBAction func schoolTapped(_ sender: UIButton) {
-        print("hello: \(tappedSchool?.school_name)")
         
         schoolName = tappedSchool?.school_name ?? "No school name available"
         print("schoolName 1: \(schoolName)")
@@ -50,8 +49,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! SchoolDetailsViewController
-        vc.testName = schoolName
-        print("schoolName 2: \(schoolName)")
+        vc.schoolObj = tappedSchool
     }
     
     
