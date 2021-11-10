@@ -48,7 +48,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
+        navigationItem.title = "Tap School Name for Details"
+        school_nameButton.setTitle("Tap for Details", for: .normal)
+        
+        
         // Opening Animation
         maskView()
         animate()
