@@ -21,6 +21,9 @@ extension ViewController {
         
         let session = URLSession.shared
         let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
+            if error != nil {
+                print("Error: \(String(describing: error))")
+            } else {
             
             do {
                 
@@ -34,6 +37,7 @@ extension ViewController {
                 
             } catch {
                 print("error: \(error)")
+            }
             }
         })
         task.resume()
